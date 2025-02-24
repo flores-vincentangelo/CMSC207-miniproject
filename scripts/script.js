@@ -26,4 +26,9 @@ $(document).ready(function () {
         $("#hni-container").css("display", "none");
         $("#ci-container").css("display", "block");
     });
+
+    $("#fun-fact-btn").click(function (e) { 
+        e.preventDefault();
+        $("#fun-fact").css("display", "none");
+    });
 })

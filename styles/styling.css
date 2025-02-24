@@ -1,3 +1,10 @@
+/* 
+phones - 0 - 480
+tablest - 481 - 768
+desktops - 769 - 1279
+large desktops 1280+
+*/
+
 html {
 	margin: 0;
 	/* overflow: hidden; */
@@ -14,8 +21,10 @@ html::-webkit-scrollbar {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 html {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
 
 body {
@@ -28,6 +37,7 @@ h1 {
 	font-size: 40px;
 	letter-spacing: -1px;
 	color: black;
+	margin: 0;
 }
 
 h2 {
@@ -36,7 +46,7 @@ h2 {
 	font-size: 25px;
 	letter-spacing: -1px;
 	color: black;
-    margin: 0px 0px 20px 0px;
+	margin: 0px 0px 20px 0px;
 }
 
 h3 {
@@ -62,23 +72,29 @@ h4 {
 	.header-container {
 		background-color: var(--yellow);
 		display: flex;
-		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 
-        height: 18%;
+		@media only screen and (max-width: 1279px) {
+			flex-flow: column;
+		}
+
+		@media only screen and (min-width: 1280px) {
+			flex-flow: row wrap;
+			height: 18%;
+		}
 
 		> div {
 			margin: 10px;
 		}
 
-		/* .name {
-            font-family: "Open Sans", serif;
-            font-weight: 300;
-            font-size: 20px;
-            letter-spacing: 5px;
-            color: black;
-        } */
+		.name {
+			text-align: left;
+		}
+
+		.title {
+			text-align: center;
+		}
 
 		.nav-container {
 			display: flex;
@@ -92,6 +108,7 @@ h4 {
 
 			> div {
 				margin-left: 10px;
+				text-align: center;
 			}
 		}
 	}
@@ -99,76 +116,109 @@ h4 {
 	.content-container {
 		display: flex;
 		flex-direction: column;
-        height: 82%;
-        
+		height: 82%;
+
 		> section {
 			padding: 20px;
-            height: 100%;
-            display: none;
-            
+			height: 100%;
+			display: none;
+			overflow-y: scroll;
 		}
 
-        .descrip-container {
-            width: 60%;
-            margin-left: 20px;
-        }
+		.descrip-container {
+			margin-left: 20px;
+
+			@media only screen and (max-width: 768px) {
+				flex-flow: column;
+				align-items: center;
+			}
+
+			@media only screen and (min-width: 769px) {
+				width: 60%;
+			}
+		}
 
 		#am-container {
 			background-color: var(--orange-1);
-            display: flex;
-            flex-direction: column;
+			display: flex;
+			flex-direction: column;
 
 			.am-contents-container {
+				height: 100%;
 				display: flex;
-				flex-direction: row;
+				flex-direction: column;
+				align-items: center;
+
+                @media only screen and (max-width: 768px) {
+         
+                }
+
+                @media only screen and (min-width: 769px) {
+                    justify-content: center;
 				justify-content: center;
-                align-items: center;
-				width: inherit;
-                height: 90%;
+
+
+                }
+
+				.am-item {
+					display: flex;
+					width: inherit;
+
+					@media only screen and (max-width: 768px) {
+						flex-flow: column;
+						align-items: center;
+                        > div {
+                            margin-bottom: 20px;
+                        }
+					}
+
+					@media only screen and (min-width: 769px) {
+						justify-content: center;
+						flex-flow: row wrap;
+						align-items: center;
+					}
+				}
 
 				img {
 					width: 200px;
 				}
-
-
 			}
 		}
+
 		#hni-container {
 			background-color: var(--blue-1);
-            overflow-y: scroll;
 
-            .hni-contents-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+			.hni-contents-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 
-                .hni-item-container {
-                    display: flex;
-                    flex-direction: row;
-                    margin-bottom: 20px;
+				.hni-item-container {
+					display: flex;
+					flex-direction: row;
+					margin-bottom: 20px;
 
-
-                    img {
-                        width: 400px;
-                    }
-                }
-            }
+					img {
+						width: 400px;
+					}
+				}
+			}
 		}
+
 		#ci-container {
 			background-color: var(--green);
 
 			.ci-contents-container {
 				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
+				flex-direction: column;
 
 				.socials-container {
 					display: flex;
 					flex-direction: row;
 
-                    > div {
-                        margin-left: 15px;
-                    }
+					> div {
+						margin-left: 15px;
+					}
 				}
 			}
 
