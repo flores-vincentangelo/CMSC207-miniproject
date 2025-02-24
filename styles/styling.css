@@ -36,6 +36,7 @@ h2 {
 	font-size: 25px;
 	letter-spacing: -1px;
 	color: black;
+    margin: 0px 0px 20px 0px;
 }
 
 h3 {
@@ -101,11 +102,16 @@ h4 {
         height: 82%;
         
 		> section {
-			padding: 10px;
+			padding: 20px;
             height: 100%;
             display: none;
             
 		}
+
+        .descrip-container {
+            width: 60%;
+            margin-left: 20px;
+        }
 
 		#am-container {
 			background-color: var(--orange-1);
@@ -124,10 +130,7 @@ h4 {
 					width: 200px;
 				}
 
-				.descrip-container {
-					width: 60%;
-					margin-left: 20px;
-				}
+
 			}
 		}
 		#hni-container {
@@ -142,6 +145,7 @@ h4 {
                 .hni-item-container {
                     display: flex;
                     flex-direction: row;
+                    margin-bottom: 20px;
 
 
                     img {
