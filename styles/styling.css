@@ -65,7 +65,7 @@ h4 {
 		justify-content: space-between;
 		align-items: center;
 
-        height: 20%;
+        height: 18%;
 
 		> div {
 			margin: 10px;
@@ -98,23 +98,27 @@ h4 {
 	.content-container {
 		display: flex;
 		flex-direction: column;
-        height: 80%;
-        background-color: green;
+        height: 82%;
         
 		> section {
 			padding: 10px;
             height: 100%;
+            display: none;
             
 		}
 
 		#am-container {
 			background-color: var(--orange-1);
+            display: flex;
+            flex-direction: column;
 
 			.am-contents-container {
 				display: flex;
 				flex-direction: row;
 				justify-content: center;
+                align-items: center;
 				width: inherit;
+                height: 90%;
 
 				img {
 					width: 200px;
@@ -128,6 +132,23 @@ h4 {
 		}
 		#hni-container {
 			background-color: var(--blue-1);
+            overflow-y: scroll;
+
+            .hni-contents-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .hni-item-container {
+                    display: flex;
+                    flex-direction: row;
+
+
+                    img {
+                        width: 400px;
+                    }
+                }
+            }
 		}
 		#ci-container {
 			background-color: var(--green);
