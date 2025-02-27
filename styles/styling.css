@@ -8,11 +8,10 @@ large desktops 1280+
 html {
 	margin: 0;
 	/* overflow: hidden; */
-	--blue-1: #3891a6;
-	--blue-2: #4c5b5c;
-	--orange-1: #ff8552;
-	--yellow: #fde74c;
-	--green: #95bf74;
+	--dark: #222222;
+	--orange: #ff6d1f;
+	--cream: #f5e7c6;
+	--off-white: #faf3e1;
 }
 
 html::-webkit-scrollbar {
@@ -25,6 +24,8 @@ html {
 	/* IE and Edge */
 	scrollbar-width: none;
 	/* Firefox */
+    overflow-y: hidden;
+
 }
 
 body {
@@ -54,7 +55,7 @@ h3 {
 	font-weight: 300;
 	font-size: 20px;
 	letter-spacing: 5px;
-	color: black;
+	margin: 0;
 }
 
 h4 {
@@ -63,55 +64,122 @@ h4 {
 	font-size: 15px;
 	letter-spacing: 2px;
 	color: black;
+	margin: 0;
+}
+
+@keyframes header-anim {
+    from {height: 100vh;}
+    to {height: 30vh;}
+    /* from {background-color: var(--off-white);}
+    to {background-color: green;} */
+}
+
+@keyframes nav-fade-anim {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
 
 .webpage {
 	height: 100vh;
 	width: 100vw;
 
+
+
 	.header-container {
-		background-color: var(--yellow);
+        min-height: 200px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
+		height: 100vh;
+		background-color: var(--off-white);
+        animation-duration: 2s;
+        animation-iteration-count: 1;
 
-		@media only screen and (max-width: 1279px) {
-			flex-flow: column;
-		}
-
-		@media only screen and (min-width: 1280px) {
-			flex-flow: row wrap;
-			height: 18%;
-		}
-
-		> div {
-			margin: 10px;
-		}
-
-		.name {
-			text-align: left;
-		}
-
-		.title {
-			text-align: center;
-		}
-
-		.nav-container {
+		.header-contents-container {
+			/* @media only screen and (max-width: 1279px) {
+                }
+                
+                @media only screen and (min-width: 1280px) {
+                    flex-flow: row wrap;
+                    } */
 			display: flex;
-			flex-direction: row;
-
-			font-family: "Open Sans", serif;
-			font-weight: 300;
-			font-size: 15px;
-			letter-spacing: 2px;
-			color: black;
+			flex-flow: column;
+			justify-content: space-between;
+			align-items: center;
 
 			> div {
-				margin-left: 10px;
+				margin: 5px;
+			}
+
+            #enter {
+                border: none;
+                box-shadow: none;
+                padding: 10px 15px;
+                text-align: center;
+                border-radius: 15px;
+                background-color: var(--off-white);
+                color: black;
+                animation-direction: reverse;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+            }
+
+            #enter:hover {
+                background-color: var(--dark);
+                border: none;
+                color: var(--off-white);
+            }
+
+			.name {
 				text-align: center;
 			}
+
+			.title {
+				text-align: center;
+			}
+
+			.nav-container {
+				display: none;
+				flex-direction: row;
+
+				font-family: "Open Sans", serif;
+				font-weight: 300;
+				font-size: 15px;
+				letter-spacing: 2px;
+				color: black;
+                animation-duration: 1s;
+                animation-timing-function: ease-in;
+
+				> div {
+					margin: 0px 5px;
+					text-align: center;
+
+					a {
+						padding: 5px;
+					}
+
+					a:link {
+						color: black;
+						text-decoration: none;
+					}
+
+					a:hover {
+						color: white;
+						background-color: var(--orange);
+						border: 3px solid, var(--orange);
+						border-radius: 15px;
+					}
+				}
+
+				/* > div:hover {
+                    background-color: green;
+                } */
+			}
 		}
+
 	}
+
+
 
 	.content-container {
 		display: flex;
@@ -139,7 +207,7 @@ h4 {
 		}
 
 		#am-container {
-			background-color: var(--orange-1);
+			background-color: var(--cream);
 			display: flex;
 			flex-direction: column;
 
@@ -149,16 +217,13 @@ h4 {
 				flex-direction: column;
 				align-items: center;
 
-                @media only screen and (max-width: 768px) {
-         
-                }
+				@media only screen and (max-width: 768px) {
+				}
 
-                @media only screen and (min-width: 769px) {
-                    justify-content: center;
-				justify-content: center;
-
-
-                }
+				@media only screen and (min-width: 769px) {
+					justify-content: center;
+					justify-content: center;
+				}
 
 				.am-item {
 					display: flex;
@@ -167,9 +232,9 @@ h4 {
 					@media only screen and (max-width: 768px) {
 						flex-flow: column;
 						align-items: center;
-                        > div {
-                            margin-bottom: 20px;
-                        }
+						> div {
+							margin-bottom: 20px;
+						}
 					}
 
 					@media only screen and (min-width: 769px) {
@@ -186,7 +251,7 @@ h4 {
 		}
 
 		#hni-container {
-			background-color: var(--blue-1);
+			background-color: var(--cream);
 
 			.hni-contents-container {
 				display: flex;
@@ -195,8 +260,20 @@ h4 {
 
 				.hni-item-container {
 					display: flex;
-					flex-direction: row;
 					margin-bottom: 20px;
+
+					@media only screen and (max-width: 768px) {
+						flex-direction: column;
+						align-items: center;
+
+						> div {
+							margin-bottom: 20px;
+						}
+					}
+
+					@media only screen and (min-width: 769px) {
+						flex-direction: row;
+					}
 
 					img {
 						width: 400px;
@@ -206,7 +283,7 @@ h4 {
 		}
 
 		#ci-container {
-			background-color: var(--green);
+			background-color: var(--cream);
 
 			.ci-contents-container {
 				display: flex;
