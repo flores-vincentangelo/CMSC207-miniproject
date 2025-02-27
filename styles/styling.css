@@ -79,6 +79,16 @@ h4 {
     to {opacity: 100%;}
 }
 
+@keyframes move-from-section-anim {
+    from {right: 0%}
+    to {right: 100%}
+}
+
+@keyframes move-to-section-anim {
+    from {left: 100%}
+    to {left: 0%}
+}
+
 .webpage {
 	height: 100vh;
 	width: 100vw;
@@ -165,32 +175,37 @@ h4 {
 
 					a:hover {
 						color: white;
-						background-color: var(--orange);
-						border: 3px solid, var(--orange);
+                        background-color: var(--dark);
+						border: 3px solid, var(--dark);
 						border-radius: 15px;
 					}
+
+                    a.selected {
+                        color: var(--orange);
+                        background-color: var(--dark);
+                        border: 3px solid, var(--dark);
+                        border-radius: 15px;
+                    }
 				}
 
-				/* > div:hover {
-                    background-color: green;
-                } */
 			}
 		}
 
 	}
 
-
-
 	.content-container {
 		display: flex;
 		flex-direction: column;
-		height: 82%;
+        max-height: 70vh;
+        height: 100%;
+        overflow-x: hidden;
+
 
 		> section {
 			padding: 20px;
-			height: 100%;
+            height: 100%;
 			display: none;
-			overflow-y: scroll;
+            overflow-y: auto;
 		}
 
 		.descrip-container {
@@ -205,6 +220,19 @@ h4 {
 				width: 60%;
 			}
 		}
+
+        .section-move-away {
+            position: relative;
+            animation-name: move-from-section-anim;
+            animation-duration: 1s;
+            right:100%;
+        }
+        
+        .section-move-to {
+            position: relative;
+            animation-name: move-to-section-anim;
+            animation-duration: 1s;
+        }
 
 		#am-container {
 			background-color: var(--cream);
@@ -251,8 +279,10 @@ h4 {
 		}
 
 		#hni-container {
-			background-color: var(--cream);
+			background-color: var(--dark);
+            color: white;
 
+            h2 {color: white;}
 			.hni-contents-container {
 				display: flex;
 				flex-direction: column;
