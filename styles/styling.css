@@ -70,8 +70,6 @@ h4 {
 @keyframes header-anim {
     from {height: 100vh;}
     to {height: 30vh;}
-    /* from {background-color: var(--off-white);}
-    to {background-color: green;} */
 }
 
 @keyframes nav-fade-anim {
@@ -86,22 +84,16 @@ h4 {
 
 
 	.header-container {
+		height: 100vh;
         min-height: 200px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
 		background-color: var(--off-white);
         animation-duration: 2s;
         animation-iteration-count: 1;
 
 		.header-contents-container {
-			/* @media only screen and (max-width: 1279px) {
-                }
-                
-                @media only screen and (min-width: 1280px) {
-                    flex-flow: row wrap;
-                    } */
 			display: flex;
 			flex-flow: column;
 			justify-content: space-between;
@@ -110,6 +102,16 @@ h4 {
 			> div {
 				margin: 5px;
 			}
+
+            @media only screen and (max-width: 480px) {
+                .title h1 {
+                    font-size: 9vw;
+                }
+
+                .name h3 {
+                    font-size: 5vw;
+                }
+            }
 
             #enter {
                 border: none;
@@ -136,6 +138,7 @@ h4 {
 
 			.title {
 				text-align: center;
+                
 			}
 
 			.nav-container {
@@ -153,13 +156,22 @@ h4 {
 				> div {
 					margin: 0px 5px;
 					text-align: center;
+                    display: flex;
+                    align-items: center;
+
+                    @media only screen and (max-width: 480px) {
+                        div {
+                            font-size: 3vw;
+                        }
+                    }
 
 					a {
 						padding: 5px;
+                    display: inline-block;
+
 					}
 
 					a:link {
-						color: black;
 						text-decoration: none;
 					}
 
@@ -170,12 +182,18 @@ h4 {
 						border-radius: 15px;
 					}
 
+                    a:visited {
+						color: black;
+                    }
+
                     a.selected {
                         color: var(--orange);
                         background-color: var(--dark);
                         border: 3px solid, var(--dark);
                         border-radius: 15px;
                     }
+
+                    
 				}
 
 			}
