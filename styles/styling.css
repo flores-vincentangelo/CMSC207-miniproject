@@ -14,15 +14,15 @@ html {
 	--off-white: #faf3e1;
 }
 
-html::-webkit-scrollbar {
+/* html::-webkit-scrollbar {
 	display: none;
-}
+} */
 
 /* Hide scrollbar for IE, Edge and Firefox */
 html {
-	-ms-overflow-style: none;
+	/* -ms-overflow-style: none; */
 	/* IE and Edge */
-	scrollbar-width: none;
+	/* scrollbar-width: none; */
 	/* Firefox */
     overflow-y: hidden;
 
@@ -77,16 +77,6 @@ h4 {
 @keyframes nav-fade-anim {
     from {opacity: 0%;}
     to {opacity: 100%;}
-}
-
-@keyframes move-from-section-anim {
-    from {right: 0%}
-    to {right: 100%}
-}
-
-@keyframes move-to-section-anim {
-    from {left: 100%}
-    to {left: 0%}
 }
 
 .webpage {
@@ -194,18 +184,31 @@ h4 {
 	}
 
 	.content-container {
-		display: flex;
-		flex-direction: column;
         max-height: 70vh;
         height: 100%;
-        overflow-x: hidden;
+        width: 100vw;
 
+		display: flex;
+		flex-direction: row;
+
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
 
 		> section {
-			padding: 20px;
             height: 100%;
-			display: none;
+            min-width: 100%;
+
+			padding: 20px;
+            margin: 0px 10px;
+
             overflow-y: auto;
+            scroll-snap-align: start;
+
+            transform-origin: center center;
+            transform: scale(1);
+            transition: transform 0.5s;
+            box-sizing: border-box;
 		}
 
 		.descrip-container {
@@ -220,19 +223,6 @@ h4 {
 				width: 60%;
 			}
 		}
-
-        .section-move-away {
-            position: relative;
-            animation-name: move-from-section-anim;
-            animation-duration: 1s;
-            right:100%;
-        }
-        
-        .section-move-to {
-            position: relative;
-            animation-name: move-to-section-anim;
-            animation-duration: 1s;
-        }
 
 		#am-container {
 			background-color: var(--cream);
