@@ -177,7 +177,7 @@ h4 {
 						padding: 5px;
                         display: inline-block;
 						text-decoration: none;
-                        color:black
+                        color:black !important;
 					}
 
 
@@ -198,7 +198,7 @@ h4 {
                     }
 
                     a.selected {
-                        color: var(--orange);
+                        color: var(--orange) !important;
                         background-color: var(--dark);
                         border: 3px solid, var(--dark);
                         border-radius: 15px;
