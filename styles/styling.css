@@ -173,7 +173,7 @@ h4 {
                         }
                     }
 
-					a {
+					a:link {
 						padding: 5px;
                         display: inline-block;
 						text-decoration: none;
