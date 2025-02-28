@@ -175,15 +175,13 @@ h4 {
 
 					a {
 						padding: 5px;
-                    display: inline-block;
-
-					}
-
-
-
-					a:link {
+                        display: inline-block;
 						text-decoration: none;
+                        color:black
 					}
+
+
+
 
                     a:hover {
 						color: white !important; 
