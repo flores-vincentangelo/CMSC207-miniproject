@@ -37,7 +37,6 @@ h1 {
 	font-weight: 800;
 	font-size: 40px;
 	letter-spacing: -1px;
-	color: black;
 	margin: 0;
 }
 
@@ -46,7 +45,6 @@ h2 {
 	font-weight: 800;
 	font-size: 25px;
 	letter-spacing: -1px;
-	color: black;
 	margin: 0px 0px 20px 0px;
 }
 
@@ -63,7 +61,6 @@ h4 {
 	font-weight: 300;
 	font-size: 15px;
 	letter-spacing: 2px;
-	color: black;
 	margin: 0;
 }
 
@@ -72,9 +69,19 @@ h4 {
     to {height: 30vh;}
 }
 
+@keyframes header-anim-rev {
+    from {height: 30vh;}
+    to {height: 100vh;}
+}
+
 @keyframes nav-fade-anim {
     from {opacity: 0%;}
     to {opacity: 100%;}
+}
+
+@keyframes nav-fade-anim-rev {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
 }
 
 .webpage {
@@ -138,20 +145,21 @@ h4 {
 
 			.title {
 				text-align: center;
-                
+                cursor: pointer;                
 			}
-
+            
 			.nav-container {
-				display: none;
+                display: none;
 				flex-direction: row;
+                animation-duration: 1s;
+                animation-timing-function: ease-in;
 
 				font-family: "Open Sans", serif;
 				font-weight: 300;
 				font-size: 15px;
 				letter-spacing: 2px;
 				color: black;
-                animation-duration: 1s;
-                animation-timing-function: ease-in;
+
 
 				> div {
 					margin: 0px 5px;
@@ -171,16 +179,21 @@ h4 {
 
 					}
 
+
+
 					a:link {
 						text-decoration: none;
 					}
 
-					a:hover {
-						color: white;
+                    a:hover {
+						color: white !important; 
                         background-color: var(--dark);
 						border: 3px solid, var(--dark);
 						border-radius: 15px;
+						text-decoration: none;
 					}
+
+					
 
                     a:visited {
 						color: black;
@@ -191,6 +204,7 @@ h4 {
                         background-color: var(--dark);
                         border: 3px solid, var(--dark);
                         border-radius: 15px;
+						text-decoration: none;
                     }
 
                     

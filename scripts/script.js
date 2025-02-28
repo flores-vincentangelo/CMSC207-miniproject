@@ -10,8 +10,19 @@ $(document).ready(function () {
 
         $(".nav-container").css("animation-name", "nav-fade-anim");
         $(".nav-container").css("display", "flex")
-
+        
     });
+    
+    $(".title h1").click(function (e) {
+        $(".header-container").css("animation-name", "header-anim-rev");
+        $(".header-container").css("height", "100vh");
+        
+        $("#enter").css("animation-name", "nav-fade-anim-rev");
+        $("#enter").css("display", "block");
+        
+        $(".nav-container").css("animation-name", "nav-fade-anim-rev");
+        $(".nav-container").css("display", "none")
+    })
 
     $(".section-buttons").click(function (e) {
         // e.preventDefault();
