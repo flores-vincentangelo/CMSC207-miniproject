@@ -309,9 +309,6 @@ h4 {
 				}
 
 				.fun-fact-container {
-					> div {
-						margin-top: 5px;
-					}
 
 					#fun-fact-btn {
 						color: white;
@@ -320,6 +317,11 @@ h4 {
 						border-radius: 15px;
 						text-decoration: none;
 						cursor: pointer;
+						margin: 5px 0;
+
+						h4 {
+							letter-spacing: 1px;
+						}
 					}
 
 					#fun-fact-btn:hover {
@@ -328,6 +330,7 @@ h4 {
 
 					#fun-fact {
 						display: none;
+						margin: 0px;
 					}
 				}
 
