@@ -105,7 +105,7 @@ h4 {
 
 	.header-container {
 		height: 100vh;
-        width: 100vw;
+		width: 100vw;
 		min-height: 200px;
 		display: flex;
 		justify-content: center;
@@ -114,10 +114,10 @@ h4 {
 		animation-duration: 2s;
 		animation-iteration-count: 1;
 
-        position:absolute;
-        z-index: 2;
+		position: absolute;
+		z-index: 2;
 
-        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+		box-shadow: 3px 5.9px 5.9px hsl(0deg 0% 0% / 0.15);
 
 		.header-contents-container {
 			display: flex;
@@ -139,33 +139,26 @@ h4 {
 				}
 			}
 
-            .enter-button {
-                
-                #enter {
-                    border: none;
-                    box-shadow: none;
-                    padding: 10px 15px;
-                    text-align: center;
-                    border-radius: 15px;
-                    background-color: var(--off-white);
-                    animation-direction: reverse;
-                    animation-duration: 1s;
-                    animation-timing-function: ease-out;
-    
-    
-                }
-    
-                #enter:hover {
-                    background-color: var(--dark);
-                    border: none;
-                    color:var(--off-white);
-                }
-            }
+			.enter-button {
+				#enter {
+					border: none;
+					box-shadow: none;
+					padding: 10px 15px;
+					text-align: center;
+					border-radius: 15px;
+					background-color: var(--off-white);
+					animation-direction: reverse;
+					animation-duration: 1s;
+					animation-timing-function: ease-out;
+				}
 
+				#enter:hover {
+					background-color: var(--dark);
+					border: none;
+					color: var(--off-white);
+				}
+			}
 
-
-            
-            
 			.name {
 				text-align: center;
 			}
@@ -230,9 +223,9 @@ h4 {
 	}
 
 	.content-container {
-        z-index: 1;
-        position: relative;
-        top: 30vh;
+		z-index: 1;
+		position: relative;
+		top: 30vh;
 		max-height: 70vh;
 		height: 100%;
 		width: 100vw;
@@ -265,8 +258,7 @@ h4 {
 			font-family: "Open Sans", serif;
 			font-weight: 300;
 			line-height: 2;
-			letter-spacing: .5px;
-
+			letter-spacing: 0.5px;
 
 			@media only screen and (max-width: 768px) {
 				flex-flow: column;
@@ -316,25 +308,37 @@ h4 {
 					}
 				}
 
-				#fun-fact-btn {
-					color: white;
+				.fun-fact-container {
+					> div {
+						margin-top: 5px;
+					}
+
+					#fun-fact-btn {
+						color: white;
 						background-color: var(--dark);
 						border: 3px solid, var(--dark);
 						border-radius: 15px;
 						text-decoration: none;
-                        cursor: pointer;
+						cursor: pointer;
+					}
+
+					#fun-fact-btn:hover {
+						color: var(--orange);
+					}
+
+					#fun-fact {
+						display: none;
+					}
 				}
 
-                #fun-fact-btn:hover {
-                    color: var(--orange);
-                }
+				.img-container {
 
-				#fun-fact {
-					display: none;
-				}
-
-				img {
-					width: 200px;
+					img {
+						width: 200px;
+						height: 200px;
+						border-radius: 50%;
+						object-fit: cover;
+					}
 				}
 			}
 		}
@@ -370,6 +374,7 @@ h4 {
 
 					img {
 						width: 400px;
+						border-radius: 20px;
 
 						@media only screen and (max-width: 480px) {
 							width: 80vw;
@@ -385,11 +390,11 @@ h4 {
 			.ci-contents-container {
 				display: flex;
 				flex-direction: column;
-                margin-left: 15px;
-                
-                > div {
-                    margin-bottom: 15px;
-                }
+				margin-left: 15px;
+
+				> div {
+					margin-bottom: 15px;
+				}
 
 				.socials-container {
 					display: flex;
@@ -406,4 +411,8 @@ h4 {
 			}
 		}
 	}
+}
+
+.img-shadow {
+	box-shadow: 3px 5.9px 5.9px hsl(0deg 0% 0% / 0.41);
 }
